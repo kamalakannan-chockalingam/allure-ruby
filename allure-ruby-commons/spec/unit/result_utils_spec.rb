@@ -97,5 +97,6 @@ describe Allure::ResultUtils do
   it "returns status details for nill class error" do
     status_details = Allure::ResultUtils.status_details(nil)
     expect(status_details.message).to eq("NilClass")
+    expect(status_details.instance_variable_defined?(:@trace)).to be_truthy
   end
 end
